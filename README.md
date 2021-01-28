@@ -136,13 +136,13 @@ The output is a dictionary mapping each trainable weight to the values of its gr
 ### Get gradients of activations
 
 ```python
-keract.get_gradients_of_activations(model, x, y, layer_name=None, output_format='simple')
+keract.get_gradients_of_activations(model, x, y, layer_names=None, output_format='simple')
 ```
 
 - `model` is a `keras.models.Model` object.
 - `x`: Numpy array to feed the model as input. In the case of multi-inputs, `x` should be of type List.
 - `y`: Labels (numpy array). Keras convention.
-- `layer_name`: (optional) Name of a layer for which activations should be returned.
+- `layer_names`: (optional) Name of a layer for which activations should be returned.
 - `output_format`: Change the output dictionary key of the function.
    - `simple`: output key will match the names of the Keras layers. For example Dense(1, name='d1') will
     return {'d1': ...}.
